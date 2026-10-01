@@ -20,13 +20,13 @@ export const companyDetails = {
 export const trustStats: TrustStat[] = [
   {
     id: 'stat-1',
-    value: '10+',
+    value: '2+',
     label: 'Years Experience',
     subtext: 'Delivering clean energy excellence'
   },
   {
     id: 'stat-2',
-    value: '500+',
+    value: '200+',
     label: 'Installations',
     subtext: 'Rooftops powered across regions'
   },
