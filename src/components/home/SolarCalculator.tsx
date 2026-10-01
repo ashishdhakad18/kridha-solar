@@ -53,14 +53,14 @@ export const SolarCalculator: React.FC<SolarCalculatorProps> = ({ onOpenQuoteMod
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full inline-flex items-center space-x-1.5">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full inline-flex items-center space-x-1.5 font-mono">
             <Calculator className="w-3.5 h-3.5" />
             <span>Interactive Estimator</span>
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight font-geist">
             How Much Can You Save With Solar?
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 font-inter">
             Use our quick calculator to estimate your recommended rooftop solar capacity and potential annual electricity bill savings.
           </p>
         </div>
@@ -72,7 +72,7 @@ export const SolarCalculator: React.FC<SolarCalculatorProps> = ({ onOpenQuoteMod
             <div className="lg:col-span-6 space-y-8">
               {/* 1. Property Type Selector */}
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-3">
+                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-3 font-mono">
                   1. Select Property Type
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -96,10 +96,10 @@ export const SolarCalculator: React.FC<SolarCalculatorProps> = ({ onOpenQuoteMod
               {/* 2. Monthly Electricity Bill Input & Slider */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">
+                  <label className="text-xs font-bold text-gray-700 uppercase tracking-wider font-mono">
                     2. Monthly Electricity Bill
                   </label>
-                  <span className="text-xl font-extrabold text-[#12372A] bg-white px-3 py-1 rounded-xl border border-gray-200 shadow-sm">
+                  <span className="text-xl font-extrabold text-[#12372A] bg-white px-3 py-1 rounded-xl border border-gray-200 shadow-sm font-mono">
                     {formatCurrency(monthlyBill)}
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export const SolarCalculator: React.FC<SolarCalculatorProps> = ({ onOpenQuoteMod
                   className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#12372A]"
                 />
 
-                <div className="flex justify-between text-[11px] text-gray-500 mt-2 font-medium">
+                <div className="flex justify-between text-[11px] text-gray-500 mt-2 font-medium font-mono">
                   <span>₹ 2,000 / mo</span>
                   <span>₹ 50,000 / mo</span>
                   <span>₹ 1,00,000+ / mo</span>
@@ -125,7 +125,7 @@ export const SolarCalculator: React.FC<SolarCalculatorProps> = ({ onOpenQuoteMod
               {/* Information Note */}
               <div className="p-4 bg-emerald-50/80 rounded-2xl border border-emerald-100 flex items-start space-x-3 text-xs text-emerald-900">
                 <Info className="w-5 h-5 text-emerald-700 flex-shrink-0 mt-0.5" />
-                <p>
+                <p className="font-inter">
                   Estimated based on average irradiance in Madhya Pradesh and typical utility tariff rates ({formatCurrency(calculationResults.tariffPerUnit)}/unit).
                 </p>
               </div>
@@ -134,7 +134,7 @@ export const SolarCalculator: React.FC<SolarCalculatorProps> = ({ onOpenQuoteMod
             {/* Results Output Column */}
             <div className="lg:col-span-6 bg-[#12372A] text-white p-6 sm:p-8 rounded-3xl shadow-xl space-y-6">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#F5B82E]">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#F5B82E] font-mono">
                   Estimated Solar Output
                 </span>
                 <Sun className="w-5 h-5 text-[#F5B82E] fill-current" />

@@ -10,13 +10,13 @@ export const Testimonials: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full font-mono">
             Customer Feedback & Reviews
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight font-geist">
             What Our Customers Say
           </h2>
-          <p className="text-base text-gray-600">
+          <p className="text-base text-gray-600 font-inter">
             Real feedback from homeowners and business managers who made the switch to clean rooftop energy with Kridha Solar.
           </p>
         </div>

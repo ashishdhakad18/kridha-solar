@@ -20,13 +20,13 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ onOpenQuoteModal }) 
         {/* Header & Filter Tabs */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full font-mono">
               Proven Track Record
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight font-geist">
               Solar Projects We’ve Delivered
             </h2>
-            <p className="text-base text-gray-600">
+            <p className="text-base text-gray-600 font-inter">
               Browse a sample showcase of completed rooftop solar installations across residential, commercial, and industrial segments.
             </p>
           </div>
@@ -37,7 +37,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ onOpenQuoteModal }) 
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
-                className={`px-4 py-2 text-xs font-bold rounded-xl transition-all ${
+                className={`px-4 py-2 text-xs font-bold rounded-xl transition-all font-mono ${
                   filter === tab
                     ? 'bg-[#12372A] text-[#F5B82E] shadow-sm'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -54,7 +54,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ onOpenQuoteModal }) 
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-[#F7F9F5] rounded-3xl overflow-hidden border border-gray-200/80 hover:border-[#12372A]/30 hover:shadow-xl transition-all duration-300 flex flex-col group"
+              className="bg-[#F7F9F5] rounded-2xl overflow-hidden border border-gray-200/80 hover:border-[#12372A]/30 hover:shadow-xl transition-all duration-300 flex flex-col group"
             >
               {/* Project Image */}
               <div className="relative h-48 w-full overflow-hidden bg-gray-200">

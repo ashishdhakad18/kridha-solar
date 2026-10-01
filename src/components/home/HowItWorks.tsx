@@ -10,13 +10,13 @@ export const HowItWorks: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full font-mono">
             Turnkey Customer Journey
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight font-geist">
             Go Solar in 5 Simple Steps
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 font-inter">
             From initial roof evaluation to net-meter commissioning, Kridha Solar handles every phase of your solar installation.
           </p>
         </div>
@@ -30,7 +30,7 @@ export const HowItWorks: React.FC = () => {
             {processSteps.map((stepItem, idx) => (
               <div
                 key={stepItem.step}
-                className="bg-white p-6 rounded-3xl border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#12372A]/30 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-[#12372A]/30 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Step Number Badge */}

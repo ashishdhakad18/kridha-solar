@@ -1,5 +1,24 @@
 import type { Metadata } from 'next';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
 import './globals.css';
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Kridha Solar | Rooftop Solar Solutions',
@@ -31,10 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased bg-[#F7F9F5] text-[#111827] flex flex-col min-h-screen">
+    <html
+      lang="en"
+      className={`scroll-smooth ${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
+    >
+      <body className="antialiased bg-[#F7F9F5] text-[#111827] flex flex-col min-h-screen font-sans">
         {children}
       </body>
     </html>
   );
 }
+

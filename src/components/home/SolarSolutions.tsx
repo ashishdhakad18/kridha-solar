@@ -15,13 +15,13 @@ export const SolarSolutions: React.FC<SolarSolutionsProps> = ({ onSelectSolution
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3 py-1 rounded-full font-mono">
             Tailored Energy Services
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight font-geist">
             Solar Solutions for Every Need
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 font-inter">
             Whether for your home, commercial property, or industrial facility, Kridha Solar engineers high-efficiency solar plants built for maximum energy yield.
           </p>
         </div>
@@ -39,7 +39,7 @@ export const SolarSolutions: React.FC<SolarSolutionsProps> = ({ onSelectSolution
             return (
               <div
                 key={solution.id}
-                className="bg-white rounded-3xl overflow-hidden border border-gray-200/90 hover:border-[#12372A]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
+                className="bg-white rounded-2xl overflow-hidden border border-gray-200/90 hover:border-[#12372A]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
                 {/* Visual Image */}
                 <div className="relative h-52 w-full overflow-hidden bg-gray-100">
@@ -50,7 +50,7 @@ export const SolarSolutions: React.FC<SolarSolutionsProps> = ({ onSelectSolution
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[#12372A] text-[#F5B82E] text-xs font-bold px-3 py-1 rounded-full shadow">
+                    <span className="bg-[#12372A] text-[#F5B82E] text-xs font-bold px-3 py-1 rounded-full shadow font-mono">
                       {solution.tag}
                     </span>
                   </div>
@@ -59,13 +59,13 @@ export const SolarSolutions: React.FC<SolarSolutionsProps> = ({ onSelectSolution
                 {/* Content Body */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
                   <div className="space-y-3">
-                    <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wider">
+                    <span className="text-xs font-semibold text-emerald-800 uppercase tracking-wider font-mono">
                       {solution.subtitle}
                     </span>
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#12372A] transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#12372A] transition-colors font-geist">
                       {solution.title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-600 leading-relaxed font-inter">
                       {solution.description}
                     </p>
 

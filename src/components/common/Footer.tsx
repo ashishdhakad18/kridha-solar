@@ -15,11 +15,11 @@ export const Footer: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-[#F5B82E] flex items-center justify-center text-[#12372A] shadow-md">
                 <Sun className="w-6 h-6 fill-current" />
               </div>
-              <span className="text-2xl font-extrabold text-white tracking-tight">
+              <span className="text-2xl font-extrabold text-white tracking-tight font-geist">
                 Kridha Solar
               </span>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-400 leading-relaxed max-w-sm font-inter">
               {companyDetails.tagline} Empowering homeowners, businesses, and industrial complexes with high-efficiency rooftop solar systems.
             </p>
             <div className="flex items-center space-x-3 pt-2">
@@ -42,8 +42,8 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-2.5 text-sm">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">Quick Links</h4>
+            <ul className="space-y-2.5 text-sm font-inter">
               <li><a href="#hero" className="hover:text-[#F5B82E] transition-colors">Home</a></li>
               <li><a href="#why-us" className="hover:text-[#F5B82E] transition-colors">About Kridha Solar</a></li>
               <li><a href="#solutions" className="hover:text-[#F5B82E] transition-colors">Solar Solutions</a></li>
@@ -55,8 +55,8 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Solar Solutions */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">Solutions</h4>
-            <ul className="space-y-2.5 text-sm text-gray-400">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">Solutions</h4>
+            <ul className="space-y-2.5 text-sm text-gray-400 font-inter">
               <li>Residential Rooftop Solar</li>
               <li>Commercial Solar Plants</li>
               <li>Industrial Mega Solar</li>
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Contact Information */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">Contact Info</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">Contact Info</h4>
             <ul className="space-y-3 text-xs text-gray-400">
               <li className="flex items-start space-x-2.5">
                 <MapPin className="w-4 h-4 text-[#F5B82E] flex-shrink-0 mt-0.5" />

@@ -20,13 +20,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
           {/* Left Column: Text & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-left">
             {/* Pill Tag */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#12372A]/10 border border-[#12372A]/15 text-[#12372A] text-xs font-semibold tracking-wide">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#12372A]/10 border border-[#12372A]/15 text-[#12372A] text-xs font-semibold tracking-wide font-mono">
               <Sun className="w-4 h-4 text-[#F5B82E] fill-current" />
               <span>Rooftop Solar Solutions Specialist</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight leading-[1.12]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight leading-[1.12] font-geist">
               Switch to Solar. <br />
               <span className="text-[#12372A] relative inline-block">
                 Save on Every Bill.
@@ -35,7 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuoteModal }) => {
             </h1>
 
             {/* Supporting Text */}
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl font-normal leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl font-normal leading-relaxed font-inter">
               Reliable rooftop solar solutions for homes and businesses. Turn your unutilized roof space into a clean power generator and reduce monthly electricity costs.
             </p>
 

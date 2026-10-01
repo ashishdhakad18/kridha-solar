@@ -18,16 +18,16 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteMod
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#F5B82E]/20 text-[#F5B82E] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#F5B82E]/20 text-[#F5B82E] text-xs font-bold uppercase tracking-wider font-mono">
               <Sun className="w-4 h-4 fill-current" />
               <span>Start Saving Today</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight font-geist">
               Ready to Make the Switch to Solar?
             </h2>
 
-            <p className="text-base sm:text-lg text-emerald-100/90 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-emerald-100/90 leading-relaxed font-normal max-w-2xl mx-auto font-inter">
               Talk to Kridha Solar about the right solar solution for your home or business. Our engineers provide complimentary site surveys and customized financial savings proposals.
             </p>
 

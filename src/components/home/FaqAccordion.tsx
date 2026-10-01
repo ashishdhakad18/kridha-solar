@@ -16,14 +16,14 @@ export const FaqAccordion: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full inline-flex items-center space-x-1.5">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#12372A] bg-[#12372A]/10 px-3.5 py-1 rounded-full inline-flex items-center space-x-1.5 font-mono">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Got Questions?</span>
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight font-geist">
             Frequently Asked Questions
           </h2>
-          <p className="text-base text-gray-600">
+          <p className="text-base text-gray-600 font-inter">
             Clear answers to common questions about rooftop solar panels, subsidies, savings, and installation timelines.
           </p>
         </div>

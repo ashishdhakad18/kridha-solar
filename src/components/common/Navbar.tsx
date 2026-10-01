@@ -44,10 +44,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               <Sun className="w-6 h-6 fill-current" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-tight text-[#12372A] leading-tight">
+              <span className="text-xl font-extrabold tracking-tight text-[#12372A] leading-tight font-geist">
                 Kridha Solar
               </span>
-              <span className="text-[10px] font-medium uppercase tracking-widest text-[#4b5563]">
+              <span className="text-[10px] font-medium uppercase tracking-widest text-[#4b5563] font-mono">
                 Clean Energy
               </span>
             </div>

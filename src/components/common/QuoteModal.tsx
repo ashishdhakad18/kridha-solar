@@ -63,8 +63,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </div>
             <span className="font-bold text-lg tracking-wide text-[#F5B82E]">Kridha Solar</span>
           </div>
-          <h3 className="mt-3 text-2xl font-bold">Request a Free Solar Quote</h3>
-          <p className="text-xs text-emerald-100 mt-1">
+          <h3 className="mt-3 text-2xl font-bold font-geist">Request a Free Solar Quote</h3>
+          <p className="text-xs text-emerald-100 mt-1 font-inter">
             Get a tailored rooftop assessment & exact financial savings estimate.
           </p>
         </div>
@@ -76,8 +76,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h4 className="text-2xl font-bold text-gray-900">Thank You!</h4>
-              <p className="text-gray-600 text-sm max-w-xs mx-auto">
+              <h4 className="text-2xl font-bold text-gray-900 font-geist">Thank You!</h4>
+              <p className="text-gray-600 text-sm max-w-xs mx-auto font-inter">
                 Your quote request has been received. Our solar engineer will contact you shortly to conduct a site assessment.
               </p>
               <button
@@ -91,7 +91,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Property Type selection */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2 font-mono">
                   Property Type
                 </label>
                 <div className="grid grid-cols-3 gap-2">
