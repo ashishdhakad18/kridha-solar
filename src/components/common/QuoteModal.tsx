@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Sun, CheckCircle2, Phone, Mail, User, MapPin } from 'lucide-react';
+import { X, Sun, CheckCircle2, Phone, Mail, User, MapPin, MessageSquare, ExternalLink } from 'lucide-react';
 import { QuoteFormData } from '@/types/solar';
+import { companyDetails } from '@/data/solarData';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -30,14 +31,52 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   if (!isOpen) return null;
 
+  const getWhatsAppUrl = () => {
+    const cleanPhone = companyDetails.phone.replace(/[^0-9]/g, '');
+    const message = `☀️ *New Solar Quote Request - Kridha Solar* ☀️
+
+👤 *Full Name:* ${formData.fullName}
+📞 *Phone Number:* ${formData.phone}
+📍 *City / Location:* ${formData.city}
+🏢 *Property Type:* ${formData.propertyType}
+⚡ *Monthly Electricity Bill:* ₹ ${formData.monthlyBill}
+📧 *Email:* ${formData.email || 'N/A'}`;
+
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+  };
+
+  const getGmailUrl = () => {
+    const subject = `New Solar Quote Request - ${formData.fullName}`;
+    const body = `Hello Kridha Solar Team,
+
+I would like to request a free rooftop solar quote with the following details:
+
+- Full Name: ${formData.fullName}
+- Phone Number: ${formData.phone}
+- City / Location: ${formData.city}
+- Property Type: ${formData.propertyType}
+- Approx. Monthly Electricity Bill: ₹ ${formData.monthlyBill}
+- Email: ${formData.email || 'N/A'}
+
+Please contact me to schedule a rooftop site evaluation.
+
+Thank you,
+${formData.fullName}`;
+
+    return `mailto:${companyDetails.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate submission delay
+    
+    // Open WhatsApp pre-filled message directly
+    window.open(getWhatsAppUrl(), '_blank');
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 800);
+    }, 400);
   };
 
   const resetAndClose = () => {
@@ -72,17 +111,68 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         {/* Modal Body */}
         <div className="p-6 max-h-[80vh] overflow-y-auto">
           {isSubmitted ? (
-            <div className="py-8 text-center space-y-4">
+            <div className="py-4 text-center space-y-5">
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h4 className="text-2xl font-bold text-gray-900 font-geist">Thank You!</h4>
-              <p className="text-gray-600 text-sm max-w-xs mx-auto font-inter">
-                Your quote request has been received. Our solar engineer will contact you shortly to conduct a site assessment.
-              </p>
+
+              <div>
+                <h4 className="text-2xl font-bold text-gray-900 font-geist">Quote Request Prepared!</h4>
+                <p className="text-gray-600 text-xs mt-1 font-inter">
+                  Your quote details are formatted and ready to send to our team.
+                </p>
+              </div>
+
+              {/* Submitted Details Summary Card */}
+              <div className="bg-[#F7F9F5] p-4 rounded-xl border border-gray-200 text-left text-xs space-y-2 font-inter">
+                <div className="flex justify-between border-b border-gray-200/60 pb-1.5">
+                  <span className="text-gray-500 font-medium">Name:</span>
+                  <span className="font-bold text-gray-900">{formData.fullName}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200/60 pb-1.5">
+                  <span className="text-gray-500 font-medium">Phone:</span>
+                  <span className="font-bold text-gray-900">{formData.phone}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200/60 pb-1.5">
+                  <span className="text-gray-500 font-medium">Location:</span>
+                  <span className="font-bold text-gray-900">{formData.city}</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-200/60 pb-1.5">
+                  <span className="text-gray-500 font-medium">Property:</span>
+                  <span className="font-bold text-emerald-800">{formData.propertyType}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500 font-medium">Monthly Bill:</span>
+                  <span className="font-bold text-gray-900">₹ {formData.monthlyBill}</span>
+                </div>
+              </div>
+
+              {/* Instant Communication CTAs */}
+              <div className="space-y-3 pt-2">
+                <a
+                  href={getWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition-colors flex items-center justify-center space-x-2 text-sm"
+                >
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>Send Details via WhatsApp</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+
+                <a
+                  href={getGmailUrl()}
+                  className="w-full py-3 px-4 bg-gray-900 hover:bg-black text-white font-bold rounded-xl shadow transition-colors flex items-center justify-center space-x-2 text-sm"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Send Details via Gmail / Email</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
               <button
                 onClick={resetAndClose}
-                className="mt-4 px-6 py-2.5 bg-[#12372A] text-white font-semibold rounded-xl hover:bg-[#1b4d3e] transition-colors"
+                className="text-xs text-gray-500 hover:text-gray-700 font-medium underline pt-2"
               >
                 Close Window
               </button>
@@ -143,7 +233,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="9876543210"
+                      placeholder="9630280482"
                       className="w-full pl-9 pr-3 py-2.5 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#12372A] focus:border-transparent outline-none"
                     />
                   </div>
@@ -201,23 +291,26 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </select>
               </div>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full mt-2 py-3 bg-[#F5B82E] text-[#12372A] font-bold rounded-xl shadow-md hover:bg-[#e0a31c] transition-colors flex items-center justify-center space-x-2 text-base"
-              >
-                {isSubmitting ? (
-                  <span>Processing...</span>
-                ) : (
-                  <>
-                    <span>Submit Quote Request</span>
-                    <Sun className="w-5 h-5 fill-current" />
-                  </>
-                )}
-              </button>
+              {/* Submit Action Options */}
+              <div className="pt-1 space-y-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 bg-[#F5B82E] text-[#12372A] font-extrabold rounded-xl shadow-md hover:bg-[#e0a31c] transition-colors flex items-center justify-center space-x-2 text-base"
+                >
+                  {isSubmitting ? (
+                    <span>Preparing Quote...</span>
+                  ) : (
+                    <>
+                      <span>Submit & Send Quote via WhatsApp</span>
+                      <MessageSquare className="w-5 h-5 fill-current" />
+                    </>
+                  )}
+                </button>
+              </div>
+
               <p className="text-[11px] text-center text-gray-500">
-                100% Privacy guaranteed. No pressure sales calls.
+                Instantly connects to WhatsApp (+91 9630280482) or Gmail with pre-filled quote details.
               </p>
             </form>
           )}
@@ -226,3 +319,4 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     </div>
   );
 };
+
