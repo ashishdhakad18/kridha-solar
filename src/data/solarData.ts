@@ -11,7 +11,7 @@ import {
 export const companyDetails = {
   name: 'Kridha Solar',
   tagline: 'Reliable rooftop solar solutions for homes and businesses.',
-  phone: '+91 98765 43210',
+  phone: '+91 6262168112',
   email: 'info@kridhasolar.com',
   address: 'Plot 42, MP Nagar Zone 1, Bhopal, Madhya Pradesh - 462011',
   operatingHours: 'Mon - Sat: 9:00 AM - 7:00 PM',
